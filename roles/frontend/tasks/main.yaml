@@ -8,12 +8,7 @@
     name: nginx
     state: started
     enabled: yes
-
-- name: run app pre-requisites
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: app-pre-req
-
+    
 # if there is change in configuration only, then you need to restart nginx
 - name: copy backend conf
   ansible.builtin.template:
